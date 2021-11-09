@@ -1,0 +1,52 @@
+{
+    "operationType": "signIn",
+    "credential": {
+        "idToken": "eyJhbGciOiJSUzI1NiIsImtpZCI6Ijg1ODI4YzU5Mjg0YTY5YjU0YjI3NDgzZTQ4N2MzYmQ0NmNkMmEyYjMiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJhY2NvdW50cy5nb29nbGUuY29tIiwiYXpwIjoiNDQ5NzM0NTAzNTQ3LTkwMDNzaXY2OGszMG50bHRhOTFhbGEybmdrNmY3ZnA5LmFwcHMuZ29vZ2xldXNlcmNvbnRlbnQuY29tIiwiYXVkIjoiNDQ5NzM0NTAzNTQ3LTkwMDNzaXY2OGszMG50bHRhOTFhbGEybmdrNmY3ZnA5LmFwcHMuZ29vZ2xldXNlcmNvbnRlbnQuY29tIiwic3ViIjoiMTE2MzkzMzUwMDY3ODEzNjA2ODA1IiwiZW1haWwiOiJjcnliYWJ5LnB5QGdtYWlsLmNvbSIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJhdF9oYXNoIjoiZzh4MlA0WmNZbEgtRXdqZ05ybmk2QSIsImlhdCI6MTYzNjAxMTUwMiwiZXhwIjoxNjM2MDE1MTAyfQ.zHj6uiR6YHumXrOoCM-_njNOUOwk5ueCr6FnqzVHFkqN1LuHCyr_azwPjYkGBICSXAZwYfRtE-w3ZkFfOziLnf0sp3ubzlXtaWV_fPRXyocLDNH8F5B1Ezr3wZfitFWUYppWbTwv6cCr7gzWE8vIPFDNGA_tawoOvM4nPjgDZUWwV5KFJQ6C-GaNQNggqezmNi4AD76jX8aJPS2xZtqtlY4hPZZ7HcJwSQKo4IzVd2nn7Oku4U9cec_uFPW3CHmAp7mZRD1YUGVZGbFNcHN_938mYHwVAqn_Sej7wb87SBKkWw-mIwHl2wxBuXA1ybAnPATwcYse54Hq_MT-oaklTg",
+        "accessToken": "ya29.a0ARrdaM_aXAdAzqVIGeNx1rSmDbrb6diHVr8x_fxsEua3lkFGoNo03WDYFp7ZhL8JBTRCC5_1opXy3CsbjzjrFPlxVn4rL_lqdthToTOpWdpE5EeUXVpBK_qUNk0Z3NW2d-KYWRhWEmAcsGH2YgZBM0fMwH9XMQ",
+        "pendingToken": null,
+        "providerId": "google.com",
+        "signInMethod": "google.com"
+    },
+    "additionalUserInfo": {
+        "isNewUser": false,
+        "providerId": "google.com",
+        "profile": {
+            "name": "Alace Crusia",
+            "granted_scopes": "openid https://www.googleapis.com/auth/userinfo.profile https://www.googleapis.com/auth/userinfo.email",
+            "id": "116393350067813606805",
+            "verified_email": true,
+            "given_name": "Alace",
+            "locale": "en-GB",
+            "family_name": "Crusia",
+            "email": "crybaby.py@gmail.com",
+            "picture": "https://lh3.googleusercontent.com/a-/AOh14Gh9x2R_YABV6czYJw3uiXonSLBymn2j1ZWCpJl-=s96-c"
+        }
+    },
+    "user": {
+        "uid": "6qxynFRRfRMgB67UCXL15SPsw5I2",
+        "email": "crybaby.py@gmail.com",
+        "emailVerified": true,
+        "displayName": "Alace Crusia",
+        "isAnonymous": false,
+        "photoURL": "https://lh3.googleusercontent.com/a-/AOh14Gh9x2R_YABV6czYJw3uiXonSLBymn2j1ZWCpJl-=s96-c",
+        "providerData": [
+            {
+                "providerId": "google.com",
+                "uid": "116393350067813606805",
+                "displayName": "Alace Crusia",
+                "email": "crybaby.py@gmail.com",
+                "phoneNumber": null,
+                "photoURL": "https://lh3.googleusercontent.com/a-/AOh14Gh9x2R_YABV6czYJw3uiXonSLBymn2j1ZWCpJl-=s96-c"
+            }
+        ],
+        "stsTokenManager": {
+            "refreshToken": "AFxQ4_ok-Yk7birN5xMF4KL3SjF0tYF9ZgQFZ27VL2wHHY0yhW8AMD6PfRk0OhVMDi2VqoEX-0pRO1ILlplvvEiGtJ4orrjathKkIF1ZkEmTaVhaQ3XdtNzG82XPjNyKEnVpHa5hMdcc5Lb6P-0L1kwi5gXQrV7Jv2uN_r_mmC8OqhtwZkxYpSKOyRjT7N8BMJzjbv4aPyzOVuSaV_tFahrekZphM3XdJzWm_lZ-lZ-MXyuDrgb9QP6Rs9BHwXPdYX1amMMm9ZY0WCSCyw3NyAj7mCKmuRDysBnJcuFk2ZjHYl_PoxUEykbDcfXRVNm3HYh34wVw0qezxkq4a4o49hmJgqSQfzfn4jtfDF_STy8JpMl4EyU1VcsRWtJM6_TMn28_od-MWcpsjB0xFGTs2Cj5I0RG_oKeqw",
+            "accessToken": "eyJhbGciOiJSUzI1NiIsImtpZCI6IjY5NGNmYTAxOTgyMDNlMjgwN2Q4MzRkYmE2MjBlZjczZjI4ZTRlMmMiLCJ0eXAiOiJKV1QifQ.eyJuYW1lIjoiQWxhY2UgQ3J1c2lhIiwicGljdHVyZSI6Imh0dHBzOi8vbGgzLmdvb2dsZXVzZXJjb250ZW50LmNvbS9hLS9BT2gxNEdoOXgyUl9ZQUJWNmN6WUp3M3VpWG9uU0xCeW1uMmoxWldDcEpsLT1zOTYtYyIsImlzcyI6Imh0dHBzOi8vc2VjdXJldG9rZW4uZ29vZ2xlLmNvbS9lbGZlcjExIiwiYXVkIjoiZWxmZXIxMSIsImF1dGhfdGltZSI6MTYzNjAxMTUwMiwidXNlcl9pZCI6IjZxeHluRlJSZlJNZ0I2N1VDWEwxNVNQc3c1STIiLCJzdWIiOiI2cXh5bkZSUmZSTWdCNjdVQ1hMMTVTUHN3NUkyIiwiaWF0IjoxNjM2MDExNTAyLCJleHAiOjE2MzYwMTUxMDIsImVtYWlsIjoiY3J5YmFieS5weUBnbWFpbC5jb20iLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwiZmlyZWJhc2UiOnsiaWRlbnRpdGllcyI6eyJnb29nbGUuY29tIjpbIjExNjM5MzM1MDA2NzgxMzYwNjgwNSJdLCJlbWFpbCI6WyJjcnliYWJ5LnB5QGdtYWlsLmNvbSJdfSwic2lnbl9pbl9wcm92aWRlciI6Imdvb2dsZS5jb20ifX0.Pnn_IF4ASshRVST3ZOYi9us9XCsQb0NjNZWze1ebVqZfq1kGaI-08XvhQ1OHrZc-P5swYhHrvFx7utJR3DsNpjhl5kTbLNzCWuAJP4uq8FPaRRTfyiFNwvgz2SiMkkgirfkRiFDCraWYWoaA_KIzekdvMPWYBiGRdymLCfB-AKtHGuKgE6xPPFHLeqVgR3T57GSPGPPLexafGwIiCAMgkZxjwTlYx1vnvqAdfd16M5OdkfkqDLU2PiN0Pp6lcUB7gkCpgaOa-pTLwJwqJ0RoHSK2phu_vg2cwBPKw9Vj1vapATBUcQ1pQn9a-gqDuXoHnXfdAQA0JtD9BBe5V33Llg",
+            "expirationTime": 1636015102896
+        },
+        "createdAt": "1635933409427",
+        "lastLoginAt": "1636011355559",
+        "apiKey": "AIzaSyCLJISRbx5egxwAtB5sWiyxQ7a2Axg1iQ0",
+        "appName": "[DEFAULT]"
+    }
+}
