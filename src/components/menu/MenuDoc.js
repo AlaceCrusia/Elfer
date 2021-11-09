@@ -20,6 +20,7 @@ import {
 //Refrence Path
 import { getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage";
 
+import Menu from "./MenuDoc.css";
 const storage = getStorage();
 const storageRef = ref(storage, "Notebook/uid/haly.pdf");
 

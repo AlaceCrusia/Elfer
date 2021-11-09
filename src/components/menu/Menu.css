@@ -2,9 +2,13 @@
   display: flex;
   width: 100%;
 }
+.container {
+  margin-right: 0;
+}
 .menu__doc__container {
   flex: 1;
   width: 20vw;
+  align-items: flex-end;
 }
 .menu__container {
   height: 100vh;
@@ -61,6 +65,9 @@
 }
 .menu__content {
   padding: 0.7rem 0.7rem;
+  height: 72vh;
+  overflow: auto;
+  overflow-x: hidden;
 }
 .menu__footer > .btn {
   width: 94%;

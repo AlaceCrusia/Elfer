@@ -5,3 +5,23 @@
 .App {
   background-color: #201f1e;
 }
+
+::-webkit-scrollbar {
+  width: 7px;
+  background-color: #201f1e;
+}
+::-webkit-scrollbar-button {
+  width: 8px;
+  height: 5px;
+}
+::-webkit-scrollbar-track {
+  background: rgb(80, 80, 80);
+  border-radius: 25px;
+}
+::-webkit-scrollbar-thumb {
+  background: rgb(57, 57, 57);
+  border-radius: 25px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #353535;
+}

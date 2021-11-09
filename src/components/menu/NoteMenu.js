@@ -3,6 +3,7 @@ import db, { auth } from "../../firebase/firebase_utils";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
+import Alert from "react-bootstrap/Alert";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./Menu.css";
 import NoteCard from "./NoteCard";
@@ -58,12 +59,6 @@ function NoteMenu() {
     `Notebook/${user_data.user.uid}/${book}/${user_file_id}.pdf`
   );
 
-  // const logout = () => {
-  //   auth.signOut();
-  //   localStorage.clear();
-  //   document.location.href = "http://localhost:3000/login";
-  // };
-
   useEffect(() => {
     // //Notebook Calling
     db.collection("Notebooks")
@@ -96,13 +91,16 @@ function NoteMenu() {
 
   const handlePdfFileChange = (e) => {
     selectedFile = e.target.files[0];
-    console.log(selectedFile);
+    // console.log(selectedFile);
     setViewPdf(selectedFile);
   };
 
   const handletextchange = (e) => {
     let selectedFile = e.target.value;
     setNotename(selectedFile);
+
+    // let name = user_data.user.displayName;
+    // alert(name);
     // let _url =
     //   "https://firebasestorage.googleapis.com/v0/b/elfer10.appspot.com/o/Notebook%2F9HmPb5tAPzeBDNO04KODvVR3Frx1%2FNotebook%2F2538b629-36ba-4550-bed6-d0c2585d042d.pdf?alt=media&token=17f65021-6dc0-4fb7-8b8a-b414d919d2c5";
 
@@ -115,10 +113,12 @@ function NoteMenu() {
     e.preventDefault();
 
     if (viewPdf) {
-      console.log(viewPdf);
+      // console.log(viewPdf);
       if (viewPdf && fileType.includes(viewPdf.type)) {
         // 'file' comes from the Blob or File API
-        console.log("Uploadeding a blob or file!" + viewPdf);
+        handleClose();
+        alert("Please wait while we are uploading you pdf to server");
+        console.log("Uploading a blob or file!" + viewPdf);
         uploadBytes(storageRef, viewPdf).then((snapshot) => {
           // Get the download URL
           getDownloadURL(storageRef)
@@ -140,6 +140,9 @@ function NoteMenu() {
                   Time: new Date().getTime().toString(),
                 })
                 .then(function () {
+                  alert(
+                    "hurray! your file was successfully uloaded to our server"
+                  );
                   console.log("Frank created");
                 });
               //==========================
@@ -207,7 +210,7 @@ function NoteMenu() {
               <Modal.Title>Modal title</Modal.Title>
             </Modal.Header>
             <Modal.Body>
-              <form className="form-group" onSubmit={handlePdfFileSubmit}>
+              <form className="form-group">
                 <input
                   type="file"
                   className="form-control"
@@ -227,16 +230,15 @@ function NoteMenu() {
                 />
                 {pdfFileError && <div className="error-msg"></div>}
                 <br></br>
-
-                <button type="submit" className="btn btn-success btn">
-                  UPLOAD
-                </button>
               </form>
             </Modal.Body>
             <Modal.Footer>
-              <Button variant="secondary" onClick={handleClose}>
-                Close
-              </Button>
+              <button
+                onClick={handlePdfFileSubmit}
+                className="btn btn-success btn"
+              >
+                UPLOAD
+              </button>
             </Modal.Footer>
           </Modal>
         </footer>

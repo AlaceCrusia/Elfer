@@ -1,4 +1,7 @@
-.menu__doc {
+/* .menu__doc {
   height: 100%;
   width: 100%;
+} */
+.pdf-container {
+  height: 100vh;
 }

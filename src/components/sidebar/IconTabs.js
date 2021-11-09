@@ -8,10 +8,16 @@ import MenuBookRoundedIcon from "@mui/icons-material/MenuBookRounded";
 import AccountCircleRoundedIcon from "@mui/icons-material/AccountCircleRounded";
 import SubscriptionsRoundedIcon from "@mui/icons-material/SubscriptionsRounded";
 import ForumRoundedIcon from "@mui/icons-material/ForumRounded";
+import { auth } from "../../firebase/firebase_utils";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./IconTabs.css";
 
 export default function IconTabs() {
+  const logout = () => {
+    auth.signOut();
+    localStorage.clear();
+    document.location.href = "http://localhost:3000/login";
+  };
   return (
     <div className="icontabs">
       <>
@@ -47,14 +53,13 @@ export default function IconTabs() {
                 </Nav.Item>
 
                 <Nav.Item>
-                  <Link to="/chat/net">
-                    <Nav.Link eventKey="fourth" className="sidebar_nav">
-                      <AccountCircleRoundedIcon
-                        color="action"
-                        fontSize="small"
-                      />
-                    </Nav.Link>
-                  </Link>
+                  <Nav.Link
+                    eventKey="fourth"
+                    onClick={logout}
+                    className="sidebar_nav"
+                  >
+                    <AccountCircleRoundedIcon color="action" fontSize="small" />
+                  </Nav.Link>
                 </Nav.Item>
               </Nav>
             </Col>
