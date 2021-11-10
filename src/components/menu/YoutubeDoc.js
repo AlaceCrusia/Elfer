@@ -36,7 +36,10 @@ function YoutubeDoc() {
   return (
     <div className="youtube__doc">
       {videos.map((video) => (
-        <IframePage video_key={video.snippet.resourceId.videoId} />
+        <IframePage
+          key={video.snippet.resourceId.videoId}
+          video_key={video.snippet.resourceId.videoId}
+        />
       ))}
       {/* <IframePage video_key="bYT86PTx61k" />
       <IframePage video_key="bYT86PTx61k" />

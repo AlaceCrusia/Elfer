@@ -4,11 +4,17 @@ import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import Alert from "react-bootstrap/Alert";
+import DropdownButton from "react-bootstrap/DropdownButton";
+import Dropdown from "react-bootstrap/Dropdown";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./Menu.css";
 import NoteCard from "./NoteCard";
 import MenuDoc from "./MenuDoc";
 import { v4 as uuidv4 } from "uuid";
+import Box from "@mui/material/Box";
+import Btn from "@mui/material/Button";
+import Typography from "@mui/material/Typography";
+import Popup from "@mui/material/Modal";
 import {
   BrowserRouter as Router,
   useNavigate,
@@ -27,11 +33,25 @@ const storage = getStorage();
   url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;700&display=swap');
 </style>;
 let selectedFile;
+
+const style = {
+  position: "absolute",
+  top: "50%",
+  left: "50%",
+  transform: "translate(-50%, -50%)",
+  width: 400,
+  bgcolor: "background.paper",
+  border: "2px solid #000",
+  boxShadow: 24,
+  p: 4,
+};
+
 function NoteMenu() {
   let book_url = "";
   // Notebook States
   const [notebook, setNotebook] = useState([]);
   const [book, setbook] = useState("Notebook");
+  const [bookfield, setbookfield] = useState("");
 
   //Note states
   const [note, setNote] = useState([]);
@@ -41,6 +61,7 @@ function NoteMenu() {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+
   // for onchange event
   const [pdfFileError, setPdfFileError] = useState("");
 
@@ -87,7 +108,12 @@ function NoteMenu() {
           }))
         )
       );
-  }, []);
+  }, [book]);
+
+  const handlebooks = (title) => {
+    setbook(title);
+    console.log(title);
+  };
 
   const handlePdfFileChange = (e) => {
     selectedFile = e.target.files[0];
@@ -103,9 +129,41 @@ function NoteMenu() {
     // alert(name);
     // let _url =
     //   "https://firebasestorage.googleapis.com/v0/b/elfer10.appspot.com/o/Notebook%2F9HmPb5tAPzeBDNO04KODvVR3Frx1%2FNotebook%2F2538b629-36ba-4550-bed6-d0c2585d042d.pdf?alt=media&token=17f65021-6dc0-4fb7-8b8a-b414d919d2c5";
-
-    // console.log(pathname);
-    // console.log(new Date().getTime().toString());
+  };
+  const handlebookchange = (e) => {
+    let selectedFile = e.target.value;
+    setbookfield(selectedFile);
+    console.log(bookfield);
+  };
+  const handlebooksubmit = () => {
+    if (bookfield !== "") {
+      db.collection("Notebooks")
+        .doc(user_data.user.uid) //For Security Purpose
+        .collection("Notebook")
+        .doc(bookfield + "") //For Security PurposeDynamic
+        .set({Text : "Dummy"}).then(function (){
+          
+      db.collection("Notebooks")
+        .doc(user_data.user.uid) //For Security Purpose
+        .collection("Notebook")
+        .doc(bookfield + "")
+        .collection("Note")
+        .doc()
+        .set({
+          File: "sample%2Fsample.pdf?alt=media&token=3d364591-5311-4be5-bb53-561c7cbd67ce",
+          Name: "Sample",
+          Time: new Date().getTime().toString(),
+        })
+        .then(function () {
+          alert("hurray! your Notebook has been successfully created");
+          console.log("Notebook created");
+          handlebooks(bookfield);
+        });
+      });
+        
+    } else {
+      alert("Please enter your notebook");
+    }
   };
 
   // form submit
@@ -187,7 +245,39 @@ function NoteMenu() {
       <div className="menu__container">
         <div>
           <header class="menu__header">
-            <span class="menu__title">Notebook</span>
+            <div className="menu__header_block">
+              {/* <span class="menu__title">Notebook</span> */}
+
+              <DropdownButton
+                variant="secondary"
+                id="dropdown-basic-button"
+                title={book}
+                size="sm"
+              >
+                {notebook.map((notebook) => (
+                  <Dropdown.Item
+                    onClick={() => handlebooks(notebook.id)}
+                    href="#/action-1"
+                  >
+                    {notebook.id}
+                  </Dropdown.Item>
+                ))}
+                <input
+                  type="text"
+                  className="form-control"
+                  required
+                  placeholder="notebook..."
+                  onChange={handlebookchange}
+                />
+                <button
+                  onClick={handlebooksubmit}
+                  size="sm"
+                  className="btn btn-success btn"
+                >
+                  UPLOAD
+                </button>
+              </DropdownButton>
+            </div>
             <hr />
           </header>
           <div className="menu__content">
@@ -225,7 +315,7 @@ function NoteMenu() {
                   type="text"
                   className="form-control"
                   required
-                  placeholder="name@example.com"
+                  placeholder="Add Section"
                   onChange={handletextchange}
                 />
                 {pdfFileError && <div className="error-msg"></div>}

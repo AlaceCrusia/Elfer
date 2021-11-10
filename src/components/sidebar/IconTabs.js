@@ -4,6 +4,7 @@ import Tab from "react-bootstrap/Tab";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Nav from "react-bootstrap/Nav";
+import LogoutRoundedIcon from "@mui/icons-material/LogoutRounded";
 import MenuBookRoundedIcon from "@mui/icons-material/MenuBookRounded";
 import AccountCircleRoundedIcon from "@mui/icons-material/AccountCircleRounded";
 import SubscriptionsRoundedIcon from "@mui/icons-material/SubscriptionsRounded";
@@ -44,21 +45,21 @@ export default function IconTabs() {
                   </Link>
                 </Nav.Item>
 
-                <Nav.Item>
+                {/* <Nav.Item>
                   <Link to="/Notes">
                     <Nav.Link eventKey="third" className="sidebar_nav">
                       <ForumRoundedIcon color="action" fontSize="small" />
                     </Nav.Link>
                   </Link>
-                </Nav.Item>
+                </Nav.Item> */}
 
-                <Nav.Item>
+                <Nav.Item className="sidebar_logout">
                   <Nav.Link
                     eventKey="fourth"
                     onClick={logout}
                     className="sidebar_nav"
                   >
-                    <AccountCircleRoundedIcon color="action" fontSize="small" />
+                    <LogoutRoundedIcon color="action" fontSize="small" />
                   </Nav.Link>
                 </Nav.Item>
               </Nav>

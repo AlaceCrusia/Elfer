@@ -74,3 +74,8 @@
   color: rgb(212, 212, 212);
   background-color: rgba(28, 28, 28, 0.7);
 }
+
+.menu__header_block {
+  cursor: pointer;
+  display: inline-block;
+}

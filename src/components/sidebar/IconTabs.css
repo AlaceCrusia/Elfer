@@ -15,3 +15,6 @@
   color: aliceblue;
   padding: 0.4rem 0.65rem;
 }
+.sidebar_logout{
+  cursor: pointer;
+}
